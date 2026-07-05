@@ -1,0 +1,1217 @@
+[
+  {
+    "loggedAt": "2026-07-05T07:40:06.882Z",
+    "source": "openweather_current",
+    "city": "cairo",
+    "severity": "warning",
+    "category": "weather",
+    "headline": "UV index 10.85 in cairo",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:40:06.882Z",
+    "source": "openweather_current",
+    "city": "cairo",
+    "severity": "info",
+    "category": "weather",
+    "headline": "30.14°C in cairo",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:40:06.882Z",
+    "source": "openweather_current",
+    "city": "giza",
+    "severity": "warning",
+    "category": "weather",
+    "headline": "UV index 10.89 in giza",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:40:06.882Z",
+    "source": "openweather_current",
+    "city": "giza",
+    "severity": "info",
+    "category": "weather",
+    "headline": "31.36°C in giza",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:40:06.882Z",
+    "source": "openweather_current",
+    "city": "alexandria",
+    "severity": "critical",
+    "category": "weather",
+    "headline": "UV index 11.04 in alexandria",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:40:06.882Z",
+    "source": "openweather_current",
+    "city": "alexandria",
+    "severity": "info",
+    "category": "weather",
+    "headline": "28.4°C in alexandria",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:40:06.882Z",
+    "source": "openweather_current",
+    "city": "luxor",
+    "severity": "critical",
+    "category": "weather",
+    "headline": "UV index 11.72 in luxor",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:40:06.882Z",
+    "source": "openweather_current",
+    "city": "luxor",
+    "severity": "advisory",
+    "category": "weather",
+    "headline": "36.83°C in luxor",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:40:06.882Z",
+    "source": "openweather_current",
+    "city": "aswan",
+    "severity": "critical",
+    "category": "weather",
+    "headline": "UV index 11.98 in aswan",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:40:06.882Z",
+    "source": "openweather_current",
+    "city": "aswan",
+    "severity": "advisory",
+    "category": "weather",
+    "headline": "38.61°C in aswan",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:40:06.882Z",
+    "source": "openweather_current",
+    "city": "hurghada",
+    "severity": "critical",
+    "category": "weather",
+    "headline": "UV index 11.41 in hurghada",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:40:06.882Z",
+    "source": "openweather_current",
+    "city": "hurghada",
+    "severity": "info",
+    "category": "weather",
+    "headline": "34.06°C in hurghada",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:40:06.882Z",
+    "source": "openweather_current",
+    "city": "sharm_el_sheikh",
+    "severity": "critical",
+    "category": "weather",
+    "headline": "UV index 11.28 in sharm_el_sheikh",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:40:06.882Z",
+    "source": "openweather_current",
+    "city": "sharm_el_sheikh",
+    "severity": "info",
+    "category": "weather",
+    "headline": "30.99°C in sharm_el_sheikh",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:40:06.882Z",
+    "source": "openweather_current",
+    "city": "dahab",
+    "severity": "critical",
+    "category": "weather",
+    "headline": "UV index 11.23 in dahab",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:40:06.882Z",
+    "source": "openweather_current",
+    "city": "dahab",
+    "severity": "info",
+    "category": "weather",
+    "headline": "33.49°C in dahab",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:40:06.882Z",
+    "source": "openweather_current",
+    "city": "marsa_alam",
+    "severity": "critical",
+    "category": "weather",
+    "headline": "UV index 11.68 in marsa_alam",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:40:06.882Z",
+    "source": "openweather_current",
+    "city": "marsa_alam",
+    "severity": "info",
+    "category": "weather",
+    "headline": "33.32°C in marsa_alam",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:40:06.882Z",
+    "source": "openweather_current",
+    "city": "el_gouna",
+    "severity": "critical",
+    "category": "weather",
+    "headline": "UV index 11.44 in el_gouna",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:40:06.882Z",
+    "source": "openweather_current",
+    "city": "el_gouna",
+    "severity": "info",
+    "category": "weather",
+    "headline": "33.06°C in el_gouna",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:40:06.882Z",
+    "source": "openweather_current",
+    "city": "siwa_oasis",
+    "severity": "critical",
+    "category": "weather",
+    "headline": "UV index 11.25 in siwa_oasis",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:40:06.882Z",
+    "source": "openweather_current",
+    "city": "siwa_oasis",
+    "severity": "info",
+    "category": "weather",
+    "headline": "32.69°C in siwa_oasis",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:30:06.799Z",
+    "source": "openweather_air",
+    "city": "cairo",
+    "severity": "advisory",
+    "category": "weather",
+    "headline": "AQI 3 in cairo (PM2.5: 27.51)",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:30:06.799Z",
+    "source": "openweather_air",
+    "city": "giza",
+    "severity": "advisory",
+    "category": "weather",
+    "headline": "AQI 3 in giza (PM2.5: 26.51)",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:30:06.799Z",
+    "source": "openweather_air",
+    "city": "alexandria",
+    "severity": "advisory",
+    "category": "weather",
+    "headline": "AQI 3 in alexandria (PM2.5: 37.97)",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:30:06.799Z",
+    "source": "openweather_air",
+    "city": "luxor",
+    "severity": "info",
+    "category": "weather",
+    "headline": "AQI 2 in luxor (PM2.5: 16.91)",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:30:06.799Z",
+    "source": "openweather_air",
+    "city": "aswan",
+    "severity": "advisory",
+    "category": "weather",
+    "headline": "AQI 3 in aswan (PM2.5: 16.87)",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:30:06.799Z",
+    "source": "openweather_air",
+    "city": "hurghada",
+    "severity": "advisory",
+    "category": "weather",
+    "headline": "AQI 3 in hurghada (PM2.5: 25.57)",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:30:06.799Z",
+    "source": "openweather_air",
+    "city": "sharm_el_sheikh",
+    "severity": "advisory",
+    "category": "weather",
+    "headline": "AQI 3 in sharm_el_sheikh (PM2.5: 18.79)",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:30:06.799Z",
+    "source": "openweather_air",
+    "city": "dahab",
+    "severity": "info",
+    "category": "weather",
+    "headline": "AQI 2 in dahab (PM2.5: 18.14)",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:30:06.799Z",
+    "source": "openweather_air",
+    "city": "marsa_alam",
+    "severity": "info",
+    "category": "weather",
+    "headline": "AQI 2 in marsa_alam (PM2.5: 13.61)",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:30:06.799Z",
+    "source": "openweather_air",
+    "city": "el_gouna",
+    "severity": "advisory",
+    "category": "weather",
+    "headline": "AQI 3 in el_gouna (PM2.5: 25.77)",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:30:06.799Z",
+    "source": "openweather_air",
+    "city": "siwa_oasis",
+    "severity": "advisory",
+    "category": "weather",
+    "headline": "AQI 3 in siwa_oasis (PM2.5: 15.95)",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:23:11.166Z",
+    "source": "openweather_air",
+    "city": "cairo",
+    "severity": "advisory",
+    "category": "weather",
+    "headline": "AQI 3 in cairo (PM2.5: 27.51)",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:23:11.166Z",
+    "source": "openweather_air",
+    "city": "giza",
+    "severity": "advisory",
+    "category": "weather",
+    "headline": "AQI 3 in giza (PM2.5: 26.51)",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:23:11.166Z",
+    "source": "openweather_air",
+    "city": "alexandria",
+    "severity": "advisory",
+    "category": "weather",
+    "headline": "AQI 3 in alexandria (PM2.5: 37.97)",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:23:11.166Z",
+    "source": "openweather_air",
+    "city": "luxor",
+    "severity": "info",
+    "category": "weather",
+    "headline": "AQI 2 in luxor (PM2.5: 16.91)",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:23:11.166Z",
+    "source": "openweather_air",
+    "city": "aswan",
+    "severity": "advisory",
+    "category": "weather",
+    "headline": "AQI 3 in aswan (PM2.5: 16.87)",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:23:11.166Z",
+    "source": "openweather_air",
+    "city": "hurghada",
+    "severity": "advisory",
+    "category": "weather",
+    "headline": "AQI 3 in hurghada (PM2.5: 25.57)",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:23:11.166Z",
+    "source": "openweather_air",
+    "city": "sharm_el_sheikh",
+    "severity": "advisory",
+    "category": "weather",
+    "headline": "AQI 3 in sharm_el_sheikh (PM2.5: 18.79)",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:23:11.166Z",
+    "source": "openweather_air",
+    "city": "dahab",
+    "severity": "info",
+    "category": "weather",
+    "headline": "AQI 2 in dahab (PM2.5: 18.14)",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:23:11.166Z",
+    "source": "openweather_air",
+    "city": "marsa_alam",
+    "severity": "info",
+    "category": "weather",
+    "headline": "AQI 2 in marsa_alam (PM2.5: 13.61)",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:23:11.166Z",
+    "source": "openweather_air",
+    "city": "el_gouna",
+    "severity": "advisory",
+    "category": "weather",
+    "headline": "AQI 3 in el_gouna (PM2.5: 25.77)",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:23:11.166Z",
+    "source": "openweather_air",
+    "city": "siwa_oasis",
+    "severity": "advisory",
+    "category": "weather",
+    "headline": "AQI 3 in siwa_oasis (PM2.5: 15.95)",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:23:05.788Z",
+    "source": "openweather_current",
+    "city": "cairo",
+    "severity": "warning",
+    "category": "weather",
+    "headline": "UV index 10.85 in cairo",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:23:05.788Z",
+    "source": "openweather_current",
+    "city": "cairo",
+    "severity": "info",
+    "category": "weather",
+    "headline": "30.14°C in cairo",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:23:05.788Z",
+    "source": "openweather_current",
+    "city": "giza",
+    "severity": "warning",
+    "category": "weather",
+    "headline": "UV index 10.89 in giza",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:23:05.788Z",
+    "source": "openweather_current",
+    "city": "giza",
+    "severity": "info",
+    "category": "weather",
+    "headline": "29.61°C in giza",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:23:05.791Z",
+    "source": "openweather_current",
+    "city": "alexandria",
+    "severity": "critical",
+    "category": "weather",
+    "headline": "UV index 11.04 in alexandria",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:23:05.791Z",
+    "source": "openweather_current",
+    "city": "alexandria",
+    "severity": "info",
+    "category": "weather",
+    "headline": "27.65°C in alexandria",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:23:05.791Z",
+    "source": "openweather_current",
+    "city": "luxor",
+    "severity": "critical",
+    "category": "weather",
+    "headline": "UV index 11.72 in luxor",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:23:05.791Z",
+    "source": "openweather_current",
+    "city": "luxor",
+    "severity": "info",
+    "category": "weather",
+    "headline": "35.09°C in luxor",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:23:05.791Z",
+    "source": "openweather_current",
+    "city": "aswan",
+    "severity": "critical",
+    "category": "weather",
+    "headline": "UV index 11.98 in aswan",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:23:05.791Z",
+    "source": "openweather_current",
+    "city": "aswan",
+    "severity": "advisory",
+    "category": "weather",
+    "headline": "36.46°C in aswan",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:23:05.791Z",
+    "source": "openweather_current",
+    "city": "hurghada",
+    "severity": "critical",
+    "category": "weather",
+    "headline": "UV index 11.41 in hurghada",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:23:05.791Z",
+    "source": "openweather_current",
+    "city": "hurghada",
+    "severity": "info",
+    "category": "weather",
+    "headline": "33.1°C in hurghada",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:23:05.791Z",
+    "source": "openweather_current",
+    "city": "sharm_el_sheikh",
+    "severity": "critical",
+    "category": "weather",
+    "headline": "UV index 11.28 in sharm_el_sheikh",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:23:05.791Z",
+    "source": "openweather_current",
+    "city": "sharm_el_sheikh",
+    "severity": "info",
+    "category": "weather",
+    "headline": "30.74°C in sharm_el_sheikh",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:23:05.791Z",
+    "source": "openweather_current",
+    "city": "dahab",
+    "severity": "critical",
+    "category": "weather",
+    "headline": "UV index 11.23 in dahab",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:23:05.791Z",
+    "source": "openweather_current",
+    "city": "dahab",
+    "severity": "info",
+    "category": "weather",
+    "headline": "32.44°C in dahab",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:23:05.791Z",
+    "source": "openweather_current",
+    "city": "marsa_alam",
+    "severity": "critical",
+    "category": "weather",
+    "headline": "UV index 11.68 in marsa_alam",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:23:05.791Z",
+    "source": "openweather_current",
+    "city": "marsa_alam",
+    "severity": "info",
+    "category": "weather",
+    "headline": "32.91°C in marsa_alam",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:23:05.791Z",
+    "source": "openweather_current",
+    "city": "el_gouna",
+    "severity": "critical",
+    "category": "weather",
+    "headline": "UV index 11.44 in el_gouna",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:23:05.791Z",
+    "source": "openweather_current",
+    "city": "el_gouna",
+    "severity": "info",
+    "category": "weather",
+    "headline": "32.2°C in el_gouna",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:23:05.791Z",
+    "source": "openweather_current",
+    "city": "siwa_oasis",
+    "severity": "critical",
+    "category": "weather",
+    "headline": "UV index 11.25 in siwa_oasis",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:23:05.791Z",
+    "source": "openweather_current",
+    "city": "siwa_oasis",
+    "severity": "info",
+    "category": "weather",
+    "headline": "31.32°C in siwa_oasis",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:21:13.311Z",
+    "source": "openweather_current",
+    "city": "cairo",
+    "severity": "warning",
+    "category": "weather",
+    "headline": "UV index 10.85 in cairo",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:21:13.312Z",
+    "source": "openweather_current",
+    "city": "cairo",
+    "severity": "info",
+    "category": "weather",
+    "headline": "30.14°C in cairo",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:21:13.312Z",
+    "source": "openweather_current",
+    "city": "giza",
+    "severity": "warning",
+    "category": "weather",
+    "headline": "UV index 10.89 in giza",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:21:13.312Z",
+    "source": "openweather_current",
+    "city": "giza",
+    "severity": "info",
+    "category": "weather",
+    "headline": "29.61°C in giza",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:21:13.312Z",
+    "source": "openweather_current",
+    "city": "alexandria",
+    "severity": "critical",
+    "category": "weather",
+    "headline": "UV index 11.04 in alexandria",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:21:13.312Z",
+    "source": "openweather_current",
+    "city": "alexandria",
+    "severity": "info",
+    "category": "weather",
+    "headline": "27.65°C in alexandria",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:21:13.312Z",
+    "source": "openweather_current",
+    "city": "luxor",
+    "severity": "critical",
+    "category": "weather",
+    "headline": "UV index 11.72 in luxor",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:21:13.312Z",
+    "source": "openweather_current",
+    "city": "luxor",
+    "severity": "info",
+    "category": "weather",
+    "headline": "35.09°C in luxor",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:21:13.312Z",
+    "source": "openweather_current",
+    "city": "aswan",
+    "severity": "critical",
+    "category": "weather",
+    "headline": "UV index 11.98 in aswan",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:21:13.312Z",
+    "source": "openweather_current",
+    "city": "aswan",
+    "severity": "advisory",
+    "category": "weather",
+    "headline": "36.46°C in aswan",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:21:13.312Z",
+    "source": "openweather_current",
+    "city": "hurghada",
+    "severity": "critical",
+    "category": "weather",
+    "headline": "UV index 11.41 in hurghada",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:21:13.312Z",
+    "source": "openweather_current",
+    "city": "hurghada",
+    "severity": "info",
+    "category": "weather",
+    "headline": "33.1°C in hurghada",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:21:13.312Z",
+    "source": "openweather_current",
+    "city": "sharm_el_sheikh",
+    "severity": "critical",
+    "category": "weather",
+    "headline": "UV index 11.28 in sharm_el_sheikh",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:21:13.312Z",
+    "source": "openweather_current",
+    "city": "sharm_el_sheikh",
+    "severity": "info",
+    "category": "weather",
+    "headline": "30.74°C in sharm_el_sheikh",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:21:13.312Z",
+    "source": "openweather_current",
+    "city": "dahab",
+    "severity": "critical",
+    "category": "weather",
+    "headline": "UV index 11.23 in dahab",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:21:13.312Z",
+    "source": "openweather_current",
+    "city": "dahab",
+    "severity": "info",
+    "category": "weather",
+    "headline": "32.44°C in dahab",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:21:13.312Z",
+    "source": "openweather_current",
+    "city": "marsa_alam",
+    "severity": "critical",
+    "category": "weather",
+    "headline": "UV index 11.68 in marsa_alam",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:21:13.312Z",
+    "source": "openweather_current",
+    "city": "marsa_alam",
+    "severity": "info",
+    "category": "weather",
+    "headline": "32.91°C in marsa_alam",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:21:13.312Z",
+    "source": "openweather_current",
+    "city": "el_gouna",
+    "severity": "critical",
+    "category": "weather",
+    "headline": "UV index 11.44 in el_gouna",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:21:13.312Z",
+    "source": "openweather_current",
+    "city": "el_gouna",
+    "severity": "info",
+    "category": "weather",
+    "headline": "32.2°C in el_gouna",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:21:13.312Z",
+    "source": "openweather_current",
+    "city": "siwa_oasis",
+    "severity": "critical",
+    "category": "weather",
+    "headline": "UV index 11.25 in siwa_oasis",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:21:13.312Z",
+    "source": "openweather_current",
+    "city": "siwa_oasis",
+    "severity": "info",
+    "category": "weather",
+    "headline": "31.32°C in siwa_oasis",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:14:11.173Z",
+    "source": "openweather_current",
+    "city": "cairo",
+    "severity": "warning",
+    "category": "weather",
+    "headline": "UV index 10.85 in cairo",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:14:11.173Z",
+    "source": "openweather_current",
+    "city": "cairo",
+    "severity": "info",
+    "category": "weather",
+    "headline": "30.14°C in cairo",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:14:11.173Z",
+    "source": "openweather_current",
+    "city": "giza",
+    "severity": "warning",
+    "category": "weather",
+    "headline": "UV index 10.89 in giza",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:14:11.173Z",
+    "source": "openweather_current",
+    "city": "giza",
+    "severity": "info",
+    "category": "weather",
+    "headline": "29.61°C in giza",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:14:11.173Z",
+    "source": "openweather_current",
+    "city": "alexandria",
+    "severity": "critical",
+    "category": "weather",
+    "headline": "UV index 11.04 in alexandria",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:14:11.173Z",
+    "source": "openweather_current",
+    "city": "alexandria",
+    "severity": "info",
+    "category": "weather",
+    "headline": "27.65°C in alexandria",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:14:11.173Z",
+    "source": "openweather_current",
+    "city": "luxor",
+    "severity": "critical",
+    "category": "weather",
+    "headline": "UV index 11.72 in luxor",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:14:11.173Z",
+    "source": "openweather_current",
+    "city": "luxor",
+    "severity": "info",
+    "category": "weather",
+    "headline": "35.09°C in luxor",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:14:11.173Z",
+    "source": "openweather_current",
+    "city": "aswan",
+    "severity": "critical",
+    "category": "weather",
+    "headline": "UV index 11.98 in aswan",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:14:11.173Z",
+    "source": "openweather_current",
+    "city": "aswan",
+    "severity": "advisory",
+    "category": "weather",
+    "headline": "36.46°C in aswan",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:14:11.173Z",
+    "source": "openweather_current",
+    "city": "hurghada",
+    "severity": "critical",
+    "category": "weather",
+    "headline": "UV index 11.41 in hurghada",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:14:11.173Z",
+    "source": "openweather_current",
+    "city": "hurghada",
+    "severity": "info",
+    "category": "weather",
+    "headline": "33.1°C in hurghada",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:14:11.173Z",
+    "source": "openweather_current",
+    "city": "sharm_el_sheikh",
+    "severity": "critical",
+    "category": "weather",
+    "headline": "UV index 11.28 in sharm_el_sheikh",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:14:11.173Z",
+    "source": "openweather_current",
+    "city": "sharm_el_sheikh",
+    "severity": "info",
+    "category": "weather",
+    "headline": "30.74°C in sharm_el_sheikh",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:14:11.173Z",
+    "source": "openweather_current",
+    "city": "dahab",
+    "severity": "critical",
+    "category": "weather",
+    "headline": "UV index 11.23 in dahab",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:14:11.173Z",
+    "source": "openweather_current",
+    "city": "dahab",
+    "severity": "info",
+    "category": "weather",
+    "headline": "32.44°C in dahab",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:14:11.173Z",
+    "source": "openweather_current",
+    "city": "marsa_alam",
+    "severity": "critical",
+    "category": "weather",
+    "headline": "UV index 11.68 in marsa_alam",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:14:11.173Z",
+    "source": "openweather_current",
+    "city": "marsa_alam",
+    "severity": "info",
+    "category": "weather",
+    "headline": "32.91°C in marsa_alam",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:14:11.173Z",
+    "source": "openweather_current",
+    "city": "el_gouna",
+    "severity": "critical",
+    "category": "weather",
+    "headline": "UV index 11.44 in el_gouna",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:14:11.173Z",
+    "source": "openweather_current",
+    "city": "el_gouna",
+    "severity": "info",
+    "category": "weather",
+    "headline": "32.2°C in el_gouna",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:14:11.173Z",
+    "source": "openweather_current",
+    "city": "siwa_oasis",
+    "severity": "critical",
+    "category": "weather",
+    "headline": "UV index 11.25 in siwa_oasis",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:14:11.173Z",
+    "source": "openweather_current",
+    "city": "siwa_oasis",
+    "severity": "info",
+    "category": "weather",
+    "headline": "31.32°C in siwa_oasis",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:12:50.297Z",
+    "source": "openweather_air",
+    "city": "cairo",
+    "severity": "advisory",
+    "category": "weather",
+    "headline": "AQI 3 in cairo (PM2.5: 27.51)",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:12:50.297Z",
+    "source": "openweather_air",
+    "city": "giza",
+    "severity": "advisory",
+    "category": "weather",
+    "headline": "AQI 3 in giza (PM2.5: 26.51)",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:12:50.297Z",
+    "source": "openweather_air",
+    "city": "alexandria",
+    "severity": "advisory",
+    "category": "weather",
+    "headline": "AQI 3 in alexandria (PM2.5: 37.97)",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:12:50.297Z",
+    "source": "openweather_air",
+    "city": "luxor",
+    "severity": "info",
+    "category": "weather",
+    "headline": "AQI 2 in luxor (PM2.5: 16.91)",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:12:50.297Z",
+    "source": "openweather_air",
+    "city": "aswan",
+    "severity": "advisory",
+    "category": "weather",
+    "headline": "AQI 3 in aswan (PM2.5: 16.87)",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:12:50.297Z",
+    "source": "openweather_air",
+    "city": "hurghada",
+    "severity": "advisory",
+    "category": "weather",
+    "headline": "AQI 3 in hurghada (PM2.5: 25.57)",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:12:50.297Z",
+    "source": "openweather_air",
+    "city": "sharm_el_sheikh",
+    "severity": "advisory",
+    "category": "weather",
+    "headline": "AQI 3 in sharm_el_sheikh (PM2.5: 18.79)",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:12:50.297Z",
+    "source": "openweather_air",
+    "city": "dahab",
+    "severity": "info",
+    "category": "weather",
+    "headline": "AQI 2 in dahab (PM2.5: 18.14)",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:12:50.297Z",
+    "source": "openweather_air",
+    "city": "marsa_alam",
+    "severity": "info",
+    "category": "weather",
+    "headline": "AQI 2 in marsa_alam (PM2.5: 13.61)",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:12:50.297Z",
+    "source": "openweather_air",
+    "city": "el_gouna",
+    "severity": "advisory",
+    "category": "weather",
+    "headline": "AQI 3 in el_gouna (PM2.5: 25.77)",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:12:50.297Z",
+    "source": "openweather_air",
+    "city": "siwa_oasis",
+    "severity": "advisory",
+    "category": "weather",
+    "headline": "AQI 3 in siwa_oasis (PM2.5: 15.95)",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T07:12:45.197Z",
+    "source": "emsc_seismic",
+    "city": "alexandria",
+    "severity": "advisory",
+    "category": "seismic",
+    "headline": "M3.5 — DODECANESE ISLANDS, GREECE",
+    "rawRef": "2021428"
+  },
+  {
+    "loggedAt": "2026-07-05T07:12:45.197Z",
+    "source": "emsc_seismic",
+    "city": "alexandria",
+    "severity": "info",
+    "category": "seismic",
+    "headline": "M3.2 — EASTERN MEDITERRANEAN SEA",
+    "rawRef": "2021252"
+  },
+  {
+    "loggedAt": "2026-07-05T06:55:57.064Z",
+    "source": "openweather_air",
+    "city": "cairo",
+    "severity": "advisory",
+    "category": "weather",
+    "headline": "AQI 3 in cairo (PM2.5: 27.51)",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T06:55:57.064Z",
+    "source": "openweather_air",
+    "city": "giza",
+    "severity": "advisory",
+    "category": "weather",
+    "headline": "AQI 3 in giza (PM2.5: 26.51)",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T06:55:57.064Z",
+    "source": "openweather_air",
+    "city": "alexandria",
+    "severity": "advisory",
+    "category": "weather",
+    "headline": "AQI 3 in alexandria (PM2.5: 37.97)",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T06:55:57.064Z",
+    "source": "openweather_air",
+    "city": "luxor",
+    "severity": "info",
+    "category": "weather",
+    "headline": "AQI 2 in luxor (PM2.5: 16.91)",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T06:55:57.064Z",
+    "source": "openweather_air",
+    "city": "aswan",
+    "severity": "advisory",
+    "category": "weather",
+    "headline": "AQI 3 in aswan (PM2.5: 16.87)",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T06:55:57.064Z",
+    "source": "openweather_air",
+    "city": "hurghada",
+    "severity": "advisory",
+    "category": "weather",
+    "headline": "AQI 3 in hurghada (PM2.5: 25.57)",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T06:55:57.064Z",
+    "source": "openweather_air",
+    "city": "sharm_el_sheikh",
+    "severity": "advisory",
+    "category": "weather",
+    "headline": "AQI 3 in sharm_el_sheikh (PM2.5: 18.79)",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T06:55:57.064Z",
+    "source": "openweather_air",
+    "city": "dahab",
+    "severity": "info",
+    "category": "weather",
+    "headline": "AQI 2 in dahab (PM2.5: 18.14)",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T06:55:57.064Z",
+    "source": "openweather_air",
+    "city": "marsa_alam",
+    "severity": "info",
+    "category": "weather",
+    "headline": "AQI 2 in marsa_alam (PM2.5: 13.61)",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T06:55:57.064Z",
+    "source": "openweather_air",
+    "city": "el_gouna",
+    "severity": "advisory",
+    "category": "weather",
+    "headline": "AQI 3 in el_gouna (PM2.5: 25.77)",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T06:55:57.064Z",
+    "source": "openweather_air",
+    "city": "siwa_oasis",
+    "severity": "advisory",
+    "category": "weather",
+    "headline": "AQI 3 in siwa_oasis (PM2.5: 15.95)",
+    "rawRef": "openweathermap.org"
+  },
+  {
+    "loggedAt": "2026-07-05T06:55:51.367Z",
+    "source": "fcdo_advisory",
+    "city": null,
+    "severity": "advisory",
+    "category": "advisory",
+    "headline": "UK FCDO travel advice updated",
+    "rawRef": "https://www.gov.uk/foreign-travel-advice/egypt"
+  }
+]

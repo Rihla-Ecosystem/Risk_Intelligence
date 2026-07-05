@@ -1,0 +1,471 @@
+{
+  "unknown": {
+    "updatedAt": "2026-07-05T06:55:51.365Z",
+    "events": [
+      {
+        "source": "fcdo_advisory",
+        "category": "advisory",
+        "severity": "advisory",
+        "city": null,
+        "lat": 0,
+        "lon": 0,
+        "headline": "UK FCDO travel advice updated",
+        "detail": "FCDO travel advice updated for Egypt",
+        "effectiveTime": "2026-03-28T19:06:54+00:00",
+        "rawRef": "https://www.gov.uk/foreign-travel-advice/egypt"
+      }
+    ],
+    "overallRisk": "advisory"
+  },
+  "cairo": {
+    "updatedAt": "2026-07-05T07:40:06.876Z",
+    "events": [
+      {
+        "source": "openweather_air",
+        "category": "weather",
+        "severity": "advisory",
+        "city": "cairo",
+        "lat": 30.0444,
+        "lon": 31.2357,
+        "headline": "AQI 3 in cairo (PM2.5: 27.51)",
+        "effectiveTime": "2026-07-05T07:20:45.000Z",
+        "rawRef": "openweathermap.org"
+      },
+      {
+        "source": "openweather_current",
+        "category": "weather",
+        "severity": "warning",
+        "city": "cairo",
+        "lat": 30.0444,
+        "lon": 31.2357,
+        "headline": "UV index 10.85 in cairo",
+        "effectiveTime": "2026-07-05T07:40:01.758Z",
+        "rawRef": "openweathermap.org"
+      },
+      {
+        "source": "openweather_current",
+        "category": "weather",
+        "severity": "info",
+        "city": "cairo",
+        "lat": 30.0444,
+        "lon": 31.2357,
+        "headline": "30.14°C in cairo",
+        "effectiveTime": "2026-07-05T07:40:01.758Z",
+        "rawRef": "openweathermap.org"
+      }
+    ],
+    "overallRisk": "warning"
+  },
+  "giza": {
+    "updatedAt": "2026-07-05T07:40:06.876Z",
+    "events": [
+      {
+        "source": "openweather_air",
+        "category": "weather",
+        "severity": "advisory",
+        "city": "giza",
+        "lat": 29.9773,
+        "lon": 31.1325,
+        "headline": "AQI 3 in giza (PM2.5: 26.51)",
+        "effectiveTime": "2026-07-05T07:20:45.000Z",
+        "rawRef": "openweathermap.org"
+      },
+      {
+        "source": "openweather_current",
+        "category": "weather",
+        "severity": "warning",
+        "city": "giza",
+        "lat": 29.9773,
+        "lon": 31.1325,
+        "headline": "UV index 10.89 in giza",
+        "effectiveTime": "2026-07-05T07:40:02.814Z",
+        "rawRef": "openweathermap.org"
+      },
+      {
+        "source": "openweather_current",
+        "category": "weather",
+        "severity": "info",
+        "city": "giza",
+        "lat": 29.9773,
+        "lon": 31.1325,
+        "headline": "31.36°C in giza",
+        "effectiveTime": "2026-07-05T07:40:02.815Z",
+        "rawRef": "openweathermap.org"
+      }
+    ],
+    "overallRisk": "warning"
+  },
+  "alexandria": {
+    "updatedAt": "2026-07-05T07:40:06.876Z",
+    "events": [
+      {
+        "source": "emsc_seismic",
+        "category": "seismic",
+        "severity": "advisory",
+        "city": "alexandria",
+        "lat": 35.4611,
+        "lon": 27.3349,
+        "headline": "M3.5 — DODECANESE ISLANDS, GREECE",
+        "effectiveTime": "2026-07-05T01:23:04.075131Z",
+        "rawRef": "2021428"
+      },
+      {
+        "source": "emsc_seismic",
+        "category": "seismic",
+        "severity": "info",
+        "city": "alexandria",
+        "lat": 35.4554,
+        "lon": 29.9189,
+        "headline": "M3.2 — EASTERN MEDITERRANEAN SEA",
+        "effectiveTime": "2026-07-04T15:23:22.67Z",
+        "rawRef": "2021252"
+      },
+      {
+        "source": "openweather_air",
+        "category": "weather",
+        "severity": "advisory",
+        "city": "alexandria",
+        "lat": 31.2001,
+        "lon": 29.9187,
+        "headline": "AQI 3 in alexandria (PM2.5: 37.97)",
+        "effectiveTime": "2026-07-05T07:20:46.000Z",
+        "rawRef": "openweathermap.org"
+      },
+      {
+        "source": "openweather_current",
+        "category": "weather",
+        "severity": "critical",
+        "city": "alexandria",
+        "lat": 31.2001,
+        "lon": 29.9187,
+        "headline": "UV index 11.04 in alexandria",
+        "effectiveTime": "2026-07-05T07:40:03.108Z",
+        "rawRef": "openweathermap.org"
+      },
+      {
+        "source": "openweather_current",
+        "category": "weather",
+        "severity": "info",
+        "city": "alexandria",
+        "lat": 31.2001,
+        "lon": 29.9187,
+        "headline": "28.4°C in alexandria",
+        "effectiveTime": "2026-07-05T07:40:03.115Z",
+        "rawRef": "openweathermap.org"
+      }
+    ],
+    "overallRisk": "critical"
+  },
+  "luxor": {
+    "updatedAt": "2026-07-05T07:40:06.876Z",
+    "events": [
+      {
+        "source": "openweather_air",
+        "category": "weather",
+        "severity": "info",
+        "city": "luxor",
+        "lat": 25.6872,
+        "lon": 32.6396,
+        "headline": "AQI 2 in luxor (PM2.5: 16.91)",
+        "effectiveTime": "2026-07-05T07:20:46.000Z",
+        "rawRef": "openweathermap.org"
+      },
+      {
+        "source": "openweather_current",
+        "category": "weather",
+        "severity": "critical",
+        "city": "luxor",
+        "lat": 25.6872,
+        "lon": 32.6396,
+        "headline": "UV index 11.72 in luxor",
+        "effectiveTime": "2026-07-05T07:40:03.402Z",
+        "rawRef": "openweathermap.org"
+      },
+      {
+        "source": "openweather_current",
+        "category": "weather",
+        "severity": "advisory",
+        "city": "luxor",
+        "lat": 25.6872,
+        "lon": 32.6396,
+        "headline": "36.83°C in luxor",
+        "effectiveTime": "2026-07-05T07:40:03.402Z",
+        "rawRef": "openweathermap.org"
+      }
+    ],
+    "overallRisk": "critical"
+  },
+  "aswan": {
+    "updatedAt": "2026-07-05T07:40:06.876Z",
+    "events": [
+      {
+        "source": "openweather_air",
+        "category": "weather",
+        "severity": "advisory",
+        "city": "aswan",
+        "lat": 24.0889,
+        "lon": 32.8998,
+        "headline": "AQI 3 in aswan (PM2.5: 16.87)",
+        "effectiveTime": "2026-07-05T07:20:47.000Z",
+        "rawRef": "openweathermap.org"
+      },
+      {
+        "source": "openweather_current",
+        "category": "weather",
+        "severity": "critical",
+        "city": "aswan",
+        "lat": 24.0889,
+        "lon": 32.8998,
+        "headline": "UV index 11.98 in aswan",
+        "effectiveTime": "2026-07-05T07:40:04.436Z",
+        "rawRef": "openweathermap.org"
+      },
+      {
+        "source": "openweather_current",
+        "category": "weather",
+        "severity": "advisory",
+        "city": "aswan",
+        "lat": 24.0889,
+        "lon": 32.8998,
+        "headline": "38.61°C in aswan",
+        "effectiveTime": "2026-07-05T07:40:04.436Z",
+        "rawRef": "openweathermap.org"
+      }
+    ],
+    "overallRisk": "critical"
+  },
+  "hurghada": {
+    "updatedAt": "2026-07-05T07:40:06.876Z",
+    "events": [
+      {
+        "source": "openweather_air",
+        "category": "weather",
+        "severity": "advisory",
+        "city": "hurghada",
+        "lat": 27.2579,
+        "lon": 33.8116,
+        "headline": "AQI 3 in hurghada (PM2.5: 25.57)",
+        "effectiveTime": "2026-07-05T07:20:47.000Z",
+        "rawRef": "openweathermap.org"
+      },
+      {
+        "source": "openweather_current",
+        "category": "weather",
+        "severity": "critical",
+        "city": "hurghada",
+        "lat": 27.2579,
+        "lon": 33.8116,
+        "headline": "UV index 11.41 in hurghada",
+        "effectiveTime": "2026-07-05T07:40:04.731Z",
+        "rawRef": "openweathermap.org"
+      },
+      {
+        "source": "openweather_current",
+        "category": "weather",
+        "severity": "info",
+        "city": "hurghada",
+        "lat": 27.2579,
+        "lon": 33.8116,
+        "headline": "34.06°C in hurghada",
+        "effectiveTime": "2026-07-05T07:40:04.731Z",
+        "rawRef": "openweathermap.org"
+      }
+    ],
+    "overallRisk": "critical"
+  },
+  "sharm_el_sheikh": {
+    "updatedAt": "2026-07-05T07:40:06.876Z",
+    "events": [
+      {
+        "source": "openweather_air",
+        "category": "weather",
+        "severity": "advisory",
+        "city": "sharm_el_sheikh",
+        "lat": 27.9158,
+        "lon": 34.33,
+        "headline": "AQI 3 in sharm_el_sheikh (PM2.5: 18.79)",
+        "effectiveTime": "2026-07-05T07:20:48.000Z",
+        "rawRef": "openweathermap.org"
+      },
+      {
+        "source": "openweather_current",
+        "category": "weather",
+        "severity": "critical",
+        "city": "sharm_el_sheikh",
+        "lat": 27.9158,
+        "lon": 34.33,
+        "headline": "UV index 11.28 in sharm_el_sheikh",
+        "effectiveTime": "2026-07-05T07:40:05.034Z",
+        "rawRef": "openweathermap.org"
+      },
+      {
+        "source": "openweather_current",
+        "category": "weather",
+        "severity": "info",
+        "city": "sharm_el_sheikh",
+        "lat": 27.9158,
+        "lon": 34.33,
+        "headline": "30.99°C in sharm_el_sheikh",
+        "effectiveTime": "2026-07-05T07:40:05.034Z",
+        "rawRef": "openweathermap.org"
+      }
+    ],
+    "overallRisk": "critical"
+  },
+  "dahab": {
+    "updatedAt": "2026-07-05T07:40:06.876Z",
+    "events": [
+      {
+        "source": "openweather_air",
+        "category": "weather",
+        "severity": "info",
+        "city": "dahab",
+        "lat": 28.5091,
+        "lon": 34.5136,
+        "headline": "AQI 2 in dahab (PM2.5: 18.14)",
+        "effectiveTime": "2026-07-05T07:20:49.000Z",
+        "rawRef": "openweathermap.org"
+      },
+      {
+        "source": "openweather_current",
+        "category": "weather",
+        "severity": "critical",
+        "city": "dahab",
+        "lat": 28.5091,
+        "lon": 34.5136,
+        "headline": "UV index 11.23 in dahab",
+        "effectiveTime": "2026-07-05T07:40:05.347Z",
+        "rawRef": "openweathermap.org"
+      },
+      {
+        "source": "openweather_current",
+        "category": "weather",
+        "severity": "info",
+        "city": "dahab",
+        "lat": 28.5091,
+        "lon": 34.5136,
+        "headline": "33.49°C in dahab",
+        "effectiveTime": "2026-07-05T07:40:05.347Z",
+        "rawRef": "openweathermap.org"
+      }
+    ],
+    "overallRisk": "critical"
+  },
+  "marsa_alam": {
+    "updatedAt": "2026-07-05T07:40:06.876Z",
+    "events": [
+      {
+        "source": "openweather_air",
+        "category": "weather",
+        "severity": "info",
+        "city": "marsa_alam",
+        "lat": 25.0676,
+        "lon": 34.879,
+        "headline": "AQI 2 in marsa_alam (PM2.5: 13.61)",
+        "effectiveTime": "2026-07-05T07:20:50.000Z",
+        "rawRef": "openweathermap.org"
+      },
+      {
+        "source": "openweather_current",
+        "category": "weather",
+        "severity": "critical",
+        "city": "marsa_alam",
+        "lat": 25.0676,
+        "lon": 34.879,
+        "headline": "UV index 11.68 in marsa_alam",
+        "effectiveTime": "2026-07-05T07:40:06.281Z",
+        "rawRef": "openweathermap.org"
+      },
+      {
+        "source": "openweather_current",
+        "category": "weather",
+        "severity": "info",
+        "city": "marsa_alam",
+        "lat": 25.0676,
+        "lon": 34.879,
+        "headline": "33.32°C in marsa_alam",
+        "effectiveTime": "2026-07-05T07:40:06.281Z",
+        "rawRef": "openweathermap.org"
+      }
+    ],
+    "overallRisk": "critical"
+  },
+  "el_gouna": {
+    "updatedAt": "2026-07-05T07:40:06.876Z",
+    "events": [
+      {
+        "source": "openweather_air",
+        "category": "weather",
+        "severity": "advisory",
+        "city": "el_gouna",
+        "lat": 27.3942,
+        "lon": 33.6783,
+        "headline": "AQI 3 in el_gouna (PM2.5: 25.77)",
+        "effectiveTime": "2026-07-05T07:20:50.000Z",
+        "rawRef": "openweathermap.org"
+      },
+      {
+        "source": "openweather_current",
+        "category": "weather",
+        "severity": "critical",
+        "city": "el_gouna",
+        "lat": 27.3942,
+        "lon": 33.6783,
+        "headline": "UV index 11.44 in el_gouna",
+        "effectiveTime": "2026-07-05T07:40:06.561Z",
+        "rawRef": "openweathermap.org"
+      },
+      {
+        "source": "openweather_current",
+        "category": "weather",
+        "severity": "info",
+        "city": "el_gouna",
+        "lat": 27.3942,
+        "lon": 33.6783,
+        "headline": "33.06°C in el_gouna",
+        "effectiveTime": "2026-07-05T07:40:06.561Z",
+        "rawRef": "openweathermap.org"
+      }
+    ],
+    "overallRisk": "critical"
+  },
+  "siwa_oasis": {
+    "updatedAt": "2026-07-05T07:40:06.876Z",
+    "events": [
+      {
+        "source": "openweather_air",
+        "category": "weather",
+        "severity": "advisory",
+        "city": "siwa_oasis",
+        "lat": 29.2032,
+        "lon": 25.5197,
+        "headline": "AQI 3 in siwa_oasis (PM2.5: 15.95)",
+        "effectiveTime": "2026-07-05T07:20:50.000Z",
+        "rawRef": "openweathermap.org"
+      },
+      {
+        "source": "openweather_current",
+        "category": "weather",
+        "severity": "critical",
+        "city": "siwa_oasis",
+        "lat": 29.2032,
+        "lon": 25.5197,
+        "headline": "UV index 11.25 in siwa_oasis",
+        "effectiveTime": "2026-07-05T07:40:06.873Z",
+        "rawRef": "openweathermap.org"
+      },
+      {
+        "source": "openweather_current",
+        "category": "weather",
+        "severity": "info",
+        "city": "siwa_oasis",
+        "lat": 29.2032,
+        "lon": 25.5197,
+        "headline": "32.69°C in siwa_oasis",
+        "effectiveTime": "2026-07-05T07:40:06.873Z",
+        "rawRef": "openweathermap.org"
+      }
+    ],
+    "overallRisk": "critical"
+  }
+}

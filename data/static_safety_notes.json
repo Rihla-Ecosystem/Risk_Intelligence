@@ -1,0 +1,13 @@
+{
+  "cairo": { "note": "Downtown and Zamalek generally safe for tourists; standard urban caution advised at night.", "level": "info" },
+  "giza": { "note": "Pyramid plateau well-patrolled; watch for unofficial guides/vendors near entrances.", "level": "info" },
+  "alexandria": { "note": "Corniche area well-patrolled; use licensed taxis, avoid isolated beaches after dark.", "level": "info" },
+  "luxor": { "note": "East Bank tourist areas well-patrolled; West Bank sites remote, travel with a guide.", "level": "info" },
+  "aswan": { "note": "Generally low-crime; standard precautions for Nile-side areas at night.", "level": "info" },
+  "hurghada": { "note": "Resort areas secure; desert excursions require licensed operators, heed marine safety briefings.", "level": "info" },
+  "sharm_el_sheikh": { "note": "Airport and resort zone heavily secured; Naama Bay safe. Avoid Sinai interior without official tour.", "level": "info" },
+  "dahab": { "note": "Layback town, low crime. Respect local customs; Blue Hole diving only with certified operators.", "level": "info" },
+  "marsa_alam": { "note": "Remote coastal town; limited medical facilities. Dive with accredited centers only.", "level": "info" },
+  "el_gouna": { "note": "Gated resort community, very low crime. Medical clinic on-site; nearest hospital in Hurghada.", "level": "info" },
+  "siwa_oasis": { "note": "Remote desert location; travel in convoy, carry充足的 supplies. Limited mobile coverage outside town.", "level": "advisory" }
+}
