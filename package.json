@@ -1,0 +1,25 @@
+{
+  "name": "risk-intelligence",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc && cp -r src/public dist/public",
+    "start": "node dist/index.js",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.0",
+    "fast-xml-parser": "^5.9.3",
+    "fastify": "^5.9.0",
+    "node-cron": "^4.5.0",
+    "yaml": "^2.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "tsx": "^4.16.0",
+    "typescript": "^5.5.0",
+    "vitest": "^4.1.9"
+  }
+}
