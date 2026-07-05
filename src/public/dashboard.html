@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Risk Intelligence Dashboard</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0f172a;color:#e2e8f0;min-height:100vh}
+header{background:#1e293b;padding:16px 24px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #334155}
+header h1{font-size:20px;font-weight:600}
+header h1 span{color:#38bdf8}
+.header-right{display:flex;align-items:center;gap:16px;font-size:13px;color:#94a3b8}
+.status-dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px}
+.status-dot.ok{background:#22c55e}
+.status-dot.err{background:#ef4444}
+.status-dot.warn{background:#f59e0b}
+.status-dot.info{background:#64748b}
+.container{max-width:1400px;margin:0 auto;padding:24px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin-bottom:24px}
+.city-card{background:#1e293b;border-radius:10px;padding:16px;border:1px solid #334155;position:relative}
+.city-card .city-name{font-size:16px;font-weight:600;margin-bottom:4px}
+.city-card .overall{font-size:12px;text-transform:uppercase;letter-spacing:.5px;margin-bottom:12px}
+.city-card .event{font-size:13px;padding:4px 0;border-bottom:1px solid #1e293b;display:flex;justify-content:space-between;gap:8px}
+.city-card .event:last-child{border-bottom:none}
+.city-card .event .sev{font-size:10px;font-weight:600;padding:1px 6px;border-radius:4px;white-space:nowrap}
+.sev-info{background:#334155;color:#94a3b8}
+.sev-advisory{background:#f59e0b20;color:#f59e0b;border:1px solid #f59e0b40}
+.sev-warning{background:#f9731620;color:#f97316;border:1px solid #f9731640}
+.sev-critical{background:#ef444420;color:#ef4444;border:1px solid #ef444440}
+.badge-critical{background:#ef4444;color:#fff}
+.badge-warning{background:#f97316;color:#fff}
+.badge-advisory{background:#f59e0b;color:#fff}
+.badge-info{background:#64748b;color:#fff}
+.section-title{font-size:14px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:#94a3b8;margin-bottom:12px}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:24px}
+@media(max-width:768px){.two-col{grid-template-columns:1fr}}
+.source-table{width:100%;border-collapse:collapse;font-size:13px}
+.source-table th{text-align:left;padding:8px 12px;background:#1e293b;color:#94a3b8;font-weight:500;border-bottom:2px solid #334155}
+.source-table td{padding:8px 12px;border-bottom:1px solid #1e293b}
+.source-table .name{font-weight:500}
+.event-feed{background:#1e293b;border-radius:10px;border:1px solid #334155;padding:12px;max-height:400px;overflow-y:auto}
+.event-feed .entry{padding:8px 0;border-bottom:1px solid #1e293b;font-size:13px}
+.event-feed .entry:last-child{border-bottom:none}
+.event-feed .time{color:#64748b;font-size:11px;margin-right:8px}
+.event-feed .src-label{font-size:10px;padding:1px 5px;border-radius:3px;margin-right:6px;background:#334155}
+.no-data{padding:24px;text-align:center;color:#64748b;font-style:italic}
+.refresh-btn{background:#334155;border:none;color:#e2e8f0;padding:6px 14px;border-radius:6px;cursor:pointer;font-size:13px}
+.refresh-btn:hover{background:#475569}
+</style>
+</head>
+<body>
+<header>
+  <h1>&#9888; Risk <span>Intelligence</span></h1>
+  <div class="header-right">
+    <span id="lastRefresh">Loading...</span>
+    <span id="statusBadge"><span class="status-dot info"></span>checking</span>
+    <button class="refresh-btn" onclick="refresh()">&#8635; Refresh</button>
+  </div>
+</header>
+<div class="container">
+  <div class="section-title">&#127758; Cities</div>
+  <div class="grid" id="cityGrid"></div>
+
+  <div class="two-col">
+    <div>
+      <div class="section-title">&#128202; Source Health</div>
+      <table class="source-table" id="sourceTable">
+        <thead><tr><th>Source</th><th>Status</th><th>Last OK</th><th>Errors</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <div>
+      <div class="section-title">&#128196; Recent Events</div>
+      <div class="event-feed" id="eventFeed">
+        <div class="no-data">Loading events...</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+async function refresh() {
+  const btn = document.querySelector('.refresh-btn');
+  btn.textContent = 'Refreshing...';
+  btn.disabled = true;
+  try {
+    const [currentRes, healthRes, changesRes] = await Promise.all([
+      fetch('/safety/current').then(r => r.json()),
+      fetch('/safety/health').then(r => r.json()),
+      fetch('/safety/changes?since=2000-01-01T00:00:00Z').then(r => r.json()),
+    ]);
+    renderCities(currentRes);
+    renderHealth(healthRes);
+    renderEvents(changesRes);
+    updateHeader(healthRes);
+  } catch (err) {
+    document.getElementById('cityGrid').innerHTML = '<div class="no-data">Failed to load data. Is the server running?</div>';
+  }
+  btn.textContent = '\u21BB Refresh';
+  btn.disabled = false;
+}
+
+function severityClass(sev) {
+  return sev === 'critical' ? 'sev-critical' : sev === 'warning' ? 'sev-warning' : sev === 'advisory' ? 'sev-advisory' : 'sev-info';
+}
+function badgeClass(sev) {
+  return sev === 'critical' ? 'badge-critical' : sev === 'warning' ? 'badge-warning' : sev === 'advisory' ? 'badge-advisory' : 'badge-info';
+}
+
+function renderCities(data) {
+  const grid = document.getElementById('cityGrid');
+  if (!data || typeof data !== 'object' || Object.keys(data).length === 0) {
+    grid.innerHTML = '<div class="no-data">No city data yet. Polls are running — data will appear soon.</div>';
+    return;
+  }
+  grid.innerHTML = '';
+  for (const [cityKey, cityData] of Object.entries(data)) {
+    const card = document.createElement('div');
+    card.className = 'city-card';
+    const events = cityData.events ?? [];
+    const overall = cityData.overallRisk ?? 'info';
+    const cityName = cityKey.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+    let eventsHtml = '';
+    if (events.length === 0) {
+      eventsHtml = '<div class="no-data" style="padding:8px 0">No active events</div>';
+    } else {
+      eventsHtml = events.slice(0, 6).map(e => {
+        const label = `${e.category} ${e.severity}`;
+        return `<div class="event"><span>${e.headline}</span><span class="sev ${severityClass(e.severity)}">${label}</span></div>`;
+      }).join('');
+      if (events.length > 6) eventsHtml += `<div class="event" style="color:#64748b;font-size:11px">+${events.length - 6} more</div>`;
+    }
+    const note = cityData.staticNote;
+    card.innerHTML = `
+      <div class="city-name">${cityName}</div>
+      <div class="overall"><span class="status-dot ${badgeClass(overall).replace('badge-','')}"></span>${overall}</div>
+      ${eventsHtml}
+      ${note ? `<div style="font-size:11px;color:#64748b;margin-top:8px;padding-top:8px;border-top:1px solid #334155">${note.headline}</div>` : ''}
+    `;
+    grid.appendChild(card);
+  }
+}
+
+function renderHealth(data) {
+  const tbody = document.querySelector('#sourceTable tbody');
+  const sources = data.sources ?? [];
+  if (sources.length === 0) {
+    tbody.innerHTML = '<tr><td colspan="4" class="no-data">No sources registered yet</td></tr>';
+    return;
+  }
+  tbody.innerHTML = sources.map(s => {
+    const status = s.bootstrapped ? (s.lastError ? 'degraded' : 'ok') : (s.lastError ? 'error' : 'pending');
+    return `<tr>
+      <td class="name">${s.name}</td>
+      <td><span class="status-dot ${status === 'ok' ? 'ok' : status === 'degraded' ? 'warn' : 'err'}"></span>${status}</td>
+      <td style="color:#94a3b8;font-size:12px">${s.lastSuccessAt ? new Date(s.lastSuccessAt).toLocaleTimeString() : '-'}</td>
+      <td style="color:#94a3b8;font-size:12px;max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${s.lastError ?? '-'}</td>
+    </tr>`;
+  }).join('');
+}
+
+function renderEvents(data) {
+  const feed = document.getElementById('eventFeed');
+  const events = data.events ?? [];
+  if (events.length === 0) {
+    feed.innerHTML = '<div class="no-data">No events logged yet</div>';
+    return;
+  }
+  feed.innerHTML = events.slice(-20).reverse().map(e => {
+    const time = e.loggedAt ? new Date(e.loggedAt).toLocaleTimeString() : '';
+    return `<div class="entry">
+      <span class="time">${time}</span>
+      <span class="src-label">${e.source}</span>
+      <span class="sev ${severityClass(e.severity)}" style="display:inline-block;padding:0 5px;border-radius:3px;font-size:10px;font-weight:600;margin-right:6px">${e.severity}</span>
+      ${e.headline}
+    </div>`;
+  }).join('');
+}
+
+function updateHeader(health) {
+  document.getElementById('lastRefresh').textContent = new Date().toLocaleTimeString();
+  const sources = health.sources ?? [];
+  const ok = sources.filter(s => s.bootstrapped && !s.lastError).length;
+  const total = sources.filter(s => s.enabled).length;
+  const badge = document.getElementById('statusBadge');
+  if (ok === total && total > 0) {
+    badge.innerHTML = '<span class="status-dot ok"></span>all sources ok';
+  } else if (ok > 0) {
+    badge.innerHTML = `<span class="status-dot warn"></span>${ok}/${total} ok`;
+  } else {
+    badge.innerHTML = '<span class="status-dot err"></span>no data yet';
+  }
+}
+
+refresh();
+setInterval(refresh, 15000);
+</script>
+</body>
+</html>
