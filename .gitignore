@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.env
+data/checkpoints/*
+!data/checkpoints/.gitkeep
+data/current_state.json
+*.log
+.venv
