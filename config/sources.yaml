@@ -1,0 +1,87 @@
+sources:
+  - name: usgs_earthquake
+    enabled: true
+    intervalMinutes: 15
+    auth: none
+
+  - name: emsc_seismic
+    enabled: true
+    intervalMinutes: 15
+    auth: none
+
+  - name: noaa_tsunami
+    enabled: true
+    intervalMinutes: 60
+    auth: none
+
+  - name: gdelt_unrest
+    enabled: true
+    intervalMinutes: 20
+    auth: none
+
+  - name: reliefweb
+    enabled: true
+    intervalMinutes: 360
+    auth: none
+
+  - name: state_dept_advisory
+    enabled: true
+    intervalMinutes: 720
+    auth: none
+
+  - name: fcdo_advisory
+    enabled: true
+    intervalMinutes: 720
+    auth: none
+
+  - name: who_outbreak
+    enabled: true
+    intervalMinutes: 720
+    auth: none
+
+  - name: cdc_travel_health
+    enabled: true
+    intervalMinutes: 720
+    auth: none
+
+  - name: openweather_current
+    enabled: true
+    intervalMinutes: 20
+    auth: api_key
+    secretEnv: OPENWEATHER_API_KEY
+
+  - name: openweather_air
+    enabled: true
+    intervalMinutes: 30
+    auth: api_key
+    secretEnv: OPENWEATHER_API_KEY
+
+  - name: nasa_firms
+    enabled: true
+    intervalMinutes: 60
+    auth: api_key
+    secretEnv: FIRMS_MAP_KEY
+
+  - name: acled_unrest
+    enabled: false
+    intervalMinutes: 60
+    auth: acled_account
+    secretEnv: ACLED_EMAIL
+
+  - name: glofas_flood
+    enabled: false
+    intervalMinutes: 360
+    auth: cds_credential
+    secretEnv: CDS_API_KEY
+
+  - name: numbeo_crime
+    enabled: false
+    intervalMinutes: 1440
+    auth: api_key
+    secretEnv: NUMBEO_API_KEY
+
+  - name: geosure_safety
+    enabled: false
+    intervalMinutes: 1440
+    auth: commercial
+    secretEnv: GEOSURE_API_KEY
