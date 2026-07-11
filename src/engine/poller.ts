@@ -32,7 +32,7 @@ export async function runSource(adapter: SourceAdapter): Promise<
       events = result.events;
     } else {
       const { url, init } = adapter.buildRequest(checkpoint);
-      const res = await fetchWithRetry(url, init, 3, 10_000, adapter.name);
+      const res = await fetchWithRetry(url, init, 3, adapter.timeoutMs ?? 10_000, adapter.name);
 
       const contentType = res.headers.get("content-type") ?? "";
       raw = contentType.includes("json") ? await res.json() : await res.text();
@@ -41,6 +41,8 @@ export async function runSource(adapter: SourceAdapter): Promise<
     }
 
     const nextCheckpoint = adapter.nextCheckpoint(raw, events, checkpoint);
+
+    await mergeIntoCurrentState(adapter.name, events);
 
     await writeCheckpointAtomic(adapter.name, {
       ...nextCheckpoint,
@@ -51,7 +53,6 @@ export async function runSource(adapter: SourceAdapter): Promise<
       autoDisabled: false,
     });
 
-    await mergeIntoCurrentState(adapter.name, events);
     return { status: "OK", count: events.length };
   } catch (err: any) {
     const checkpoint = await readCheckpoint(adapter.name);

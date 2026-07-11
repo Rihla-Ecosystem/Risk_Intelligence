@@ -1,6 +1,7 @@
 import type { FastifyInstance, FastifyRequest, FastifyReply } from "fastify";
 import type { SourceAdapter } from "../engine/models.js";
 import { runSource } from "../engine/poller.js";
+import { runAllOnce } from "../engine/scheduler.js";
 import { getCityState, getAllStates } from "../engine/currentState.js";
 import { getChangesSince } from "../engine/eventLog.js";
 import { getSourcesHealth } from "../engine/health.js";
@@ -82,7 +83,7 @@ export async function registerRoutes(app: FastifyInstance, adapters?: SourceAdap
       return { source, ...result };
     }
 
-    const results = await Promise.all(adapters.map((a) => runSource(a).then((r) => ({ source: a.name, ...r }))));
+    const results = await runAllOnce(adapters);
     return { refreshed: results.length, sources: results };
   });
 }

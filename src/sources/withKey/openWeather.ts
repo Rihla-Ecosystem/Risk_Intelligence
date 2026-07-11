@@ -17,6 +17,7 @@ export const openWeather: SourceAdapter = {
 
   async fetchData(): Promise<{ raw: unknown; events: RiskEvent[] }> {
     const events: RiskEvent[] = [];
+    let failed = 0;
     for (const [city, { lat, lon }] of Object.entries(EGYPT_CITIES)) {
       try {
         const [weatherRes, uviRes] = await Promise.all([
@@ -34,7 +35,12 @@ export const openWeather: SourceAdapter = {
         events.push(...eventsForCity(city, { weather, uvi }));
       } catch (err) {
         console.error(`openweather_current failed for ${city}:`, err);
+        failed++;
       }
+    }
+    if (failed > 0) {
+      const total = Object.keys(EGYPT_CITIES).length;
+      console.warn(`openweather_current: ${failed}/${total} cities failed, ${events.length} events generated`);
     }
     return { raw: {}, events };
   },

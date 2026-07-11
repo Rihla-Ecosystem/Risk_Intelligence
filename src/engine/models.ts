@@ -27,6 +27,8 @@ export interface SourceAdapter {
   name: string;
   intervalMinutes: number;
   enabled: boolean;
+  /** Optional: per-request timeout in ms. Falls back to 10_000 in poller. */
+  timeoutMs?: number;
   buildRequest(checkpoint: Checkpoint): { url: string; init?: RequestInit };
   parse(raw: unknown, checkpoint: Checkpoint): RiskEvent[];
   nextCheckpoint(raw: unknown, events: RiskEvent[], prev: Checkpoint): Checkpoint;

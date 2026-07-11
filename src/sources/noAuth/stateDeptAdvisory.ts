@@ -6,6 +6,7 @@ export const stateDeptAdvisory: SourceAdapter = {
   name: "state_dept_advisory",
   intervalMinutes: 720,
   enabled: true,
+  timeoutMs: 20_000,
 
   buildRequest() {
     // NOTE: State Dept doesn't have a formal REST API — this consumes their

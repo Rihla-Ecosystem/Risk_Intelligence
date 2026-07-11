@@ -15,6 +15,38 @@ export function startScheduler(sources: SourceAdapter[]) {
 }
 
 export async function runAllOnce(sources: SourceAdapter[]) {
-  const results = await Promise.all(sources.map((s) => runSource(s)));
-  return sources.map((s, i) => ({ source: s.name, ...results[i] }));
+  // First pass: run all in parallel
+  const settled = await Promise.allSettled(
+    sources.map(async (s) => {
+      const r = await runSource(s);
+      return { source: s.name, ...r };
+    })
+  );
+
+  const results: Array<{ source: string; status: "OK" | "SKIPPED" | "FAILED"; count?: number; error?: string }> =
+    settled.map((r) =>
+      r.status === "fulfilled"
+        ? r.value
+        : { source: "unknown", status: "FAILED" as const, error: String(r.reason) }
+    );
+
+  // Second pass: retry failed sources sequentially with a small gap
+  const failed = results.filter((r) => r.status === "FAILED" || (r.status === "OK" && r.count === 0));
+  if (failed.length > 0) {
+    console.log(`[scheduler] retry pass: ${failed.length} sources to retry`);
+    for (const f of failed) {
+      const adapter = sources.find((s) => s.name === f.source);
+      if (!adapter) continue;
+      await sleep(2_000); // stagger retries 2s apart
+      const retry = await runSource(adapter);
+      const idx = results.findIndex((r) => r.source === f.source);
+      if (idx !== -1) results[idx] = { source: f.source, ...retry };
+    }
+  }
+
+  return results;
+}
+
+function sleep(ms: number) {
+  return new Promise((r) => setTimeout(r, ms));
 }

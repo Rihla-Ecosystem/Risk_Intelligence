@@ -21,6 +21,7 @@ export const whoOutbreak: SourceAdapter = {
   name: "who_outbreak",
   intervalMinutes: 720,
   enabled: true,
+  timeoutMs: 20_000,
 
   buildRequest() {
     const params = new URLSearchParams({
