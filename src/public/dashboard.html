@@ -261,6 +261,10 @@ function renderHealth(data) {
     const openClass = isOpen ? ' open' : '';
     const info = SOURCE_INFO[s.name] || { agency: s.name, country: "Global", desc: "External API Integration Link.", category: "general" };
 
+    const eventText = evts.length === 0 
+      ? '<span style="color:#22c55e; font-weight:500;">0 (Nominal / Safe)</span>' 
+      : `<span style="color:#ef4444; font-weight:700;">⚠️ ${evts.length} active</span>`;
+
     let html = `<tr class="source-row${openClass}" data-source="${s.name}" onclick="toggleSource('${s.name}')">
       <td><span class="toggle-icon">&#9654;</span></td>
       <td class="name">
@@ -275,8 +279,8 @@ function renderHealth(data) {
       </td>
       <td><span class="status-dot ${dotClass}"></span>${status}</td>
       <td style="color:#94a3b8;font-size:12px">${s.lastSuccessAt ? new Date(s.lastSuccessAt).toLocaleTimeString() : '-'}</td>
-      <td style="color:#94a3b8;font-size:12px">${evts.length}</td>
-      <td style="color:#94a3b8;font-size:12px;max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${s.lastError ?? '-'}</td>
+      <td style="color:#94a3b8;font-size:12px">${eventText}</td>
+      <td style="color:#94a3b8;font-size:12px;max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${s.isAutoDisabled ? 'disabled' : (s.lastError ?? '-')}</td>
     </tr>`;
 
     html += `<tr class="source-events-row${openClass}" data-source-detail="${s.name}">
