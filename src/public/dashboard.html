@@ -96,6 +96,75 @@ header h1 span{color:#38bdf8}
 <script>
 let eventsBySource = {};
 
+const SOURCE_INFO = {
+  "usgs_earthquake": {
+    agency: "USGS (US Geological Survey)",
+    country: "🇺🇸 USA / Global",
+    desc: "Monitors primary seismic tremors and earthquakes around Egypt.",
+    category: "seismic"
+  },
+  "emsc_seismic": {
+    agency: "EMSC (Euro-Med Seismological Centre)",
+    country: "🇪🇺 Europe / Med",
+    desc: "Tracks Mediterranean earthquakes and local seismic activity.",
+    category: "seismic"
+  },
+  "noaa_tsunami": {
+    agency: "NOAA (National Oceanographic & Atmospheric Admin)",
+    country: "🇺🇸 USA / Global",
+    desc: "Monitors ocean level changes and coastal tsunami wave hazards.",
+    category: "tsunami"
+  },
+  "gdelt_unrest": {
+    agency: "GDELT Project (Global Event Database)",
+    country: "🇺🇸 USA / Worldwide Research",
+    desc: "Scrapes global news events to detect protests, unrest, or riots in Egypt.",
+    category: "unrest"
+  },
+  "reliefweb": {
+    agency: "ReliefWeb (UN Office for Humanitarian Affairs)",
+    country: "🇺🇳 United Nations",
+    desc: "Monitors humanitarian crises, conflicts, and disaster bulletins.",
+    category: "humanitarian"
+  },
+  "fcdo_advisory": {
+    agency: "FCDO (Foreign, Commonwealth & Development Office)",
+    country: "🇬🇧 United Kingdom",
+    desc: "Official UK government travel advisories, security level warnings, and maps.",
+    category: "travel advisory"
+  },
+  "who_outbreak": {
+    agency: "WHO (World Health Organization)",
+    country: "🇺🇳 United Nations",
+    desc: "Monitors infectious disease outbreaks, pandemics, and health warnings.",
+    category: "health"
+  },
+  "cdc_travel_health": {
+    agency: "CDC (Centers for Disease Control)",
+    country: "🇺🇸 USA",
+    desc: "Monitors travel health notices, vaccine alerts, and regional safety advice.",
+    category: "health"
+  },
+  "openweather_current": {
+    agency: "OpenWeatherMap Current API",
+    country: "🇨🇭 Switzerland / UK",
+    desc: "Provides temperature, sky description, and extreme UV rays warnings.",
+    category: "weather"
+  },
+  "openweather_air": {
+    agency: "OpenWeatherMap Air Quality API",
+    country: "🇨🇭 Switzerland / UK",
+    desc: "Provides live air pollution, PM2.5, PM10, and Ozone AQI levels.",
+    category: "air quality"
+  },
+  "nasa_firms": {
+    agency: "NASA FIRMS (Fire Info for Resource Management)",
+    country: "🇺🇸 USA / Global Satellites",
+    desc: "Utilizes MODIS/VIIRS heat-mapping satellites to detect fires and hotspots.",
+    category: "fire"
+  }
+};
+
 async function refresh() {
   const btn = document.querySelector('.refresh-btn');
   btn.textContent = 'Refreshing...';
@@ -190,10 +259,20 @@ function renderHealth(data) {
     const evts = eventsBySource[s.name] || [];
     const isOpen = openSources.has(s.name);
     const openClass = isOpen ? ' open' : '';
+    const info = SOURCE_INFO[s.name] || { agency: s.name, country: "Global", desc: "External API Integration Link.", category: "general" };
 
     let html = `<tr class="source-row${openClass}" data-source="${s.name}" onclick="toggleSource('${s.name}')">
       <td><span class="toggle-icon">&#9654;</span></td>
-      <td class="name">${s.name}<span class="source-event-count">(${evts.length})</span></td>
+      <td class="name">
+        <div style="font-weight:600; font-size: 13px;">${info.agency}</div>
+        <div style="font-size:10px; color:#94a3b8; margin-top:2px;">
+          <span>Origin: <strong>${info.country}</strong></span> | 
+          <span style="color:#38bdf8;">Topic: <strong>${info.category}</strong></span>
+        </div>
+        <div style="font-size:11px; color:#64748b; margin-top:3px; max-width: 450px; white-space: normal; line-height: 1.3;">
+          ${info.desc}
+        </div>
+      </td>
       <td><span class="status-dot ${dotClass}"></span>${status}</td>
       <td style="color:#94a3b8;font-size:12px">${s.lastSuccessAt ? new Date(s.lastSuccessAt).toLocaleTimeString() : '-'}</td>
       <td style="color:#94a3b8;font-size:12px">${evts.length}</td>
