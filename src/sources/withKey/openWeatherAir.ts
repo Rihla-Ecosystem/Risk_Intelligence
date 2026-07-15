@@ -36,7 +36,7 @@ export const openWeatherAir: SourceAdapter = {
             lon: data.coord.lon,
             headline: `AQI ${item.main.aqi} in ${city} (PM2.5: ${item.components.pm2_5})`,
             effectiveTime: new Date(item.dt * 1000).toISOString(),
-            rawRef: "openweathermap.org",
+            rawRef: `openweathermap.org::aqi::${city}`,
           });
         }
       } catch (err) {

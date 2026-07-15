@@ -71,7 +71,7 @@ function eventsForCity(city: string, data: { weather: any; uvi: any }): RiskEven
       lon: weather?.coord?.lon ?? 0,
       headline: `UV index ${uv} in ${city}`,
       effectiveTime: new Date().toISOString(),
-      rawRef: "openweathermap.org",
+      rawRef: `openweathermap.org::uv::${city}`,
     });
   }
   if (temp !== undefined) {
@@ -90,7 +90,7 @@ function eventsForCity(city: string, data: { weather: any; uvi: any }): RiskEven
         ? "Stay hydrated, avoid outdoor activity 11am–4pm, watch for heat exhaustion symptoms. Elderly tourists and those with health conditions are at highest risk."
         : undefined,
       effectiveTime: new Date().toISOString(),
-      rawRef: "openweathermap.org",
+      rawRef: `openweathermap.org::temp::${city}`,
     });
   }
   return events;
