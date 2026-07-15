@@ -47,6 +47,20 @@ header h1 span{color:#38bdf8}
 .no-data{padding:24px;text-align:center;color:#64748b;font-style:italic}
 .refresh-btn{background:#334155;border:none;color:#e2e8f0;padding:6px 14px;border-radius:6px;cursor:pointer;font-size:13px}
 .refresh-btn:hover{background:#475569}
+
+.source-row{cursor:pointer;transition:background .15s}
+.source-row:hover{background:#334155}
+.source-row .toggle-icon{display:inline-block;width:16px;transition:transform .2s;color:#94a3b8;font-size:12px}
+.source-row.open .toggle-icon{transform:rotate(90deg)}
+.source-events-row{display:none}
+.source-events-row.open{display:table-row}
+.source-events-cell{padding:0 12px 8px 30px;border-bottom:1px solid #334155}
+.source-events-cell .ev-item{font-size:12px;padding:5px 8px;margin:3px 0;background:#0f172a;border-radius:6px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.source-events-cell .ev-headline{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.source-events-cell .ev-city{font-size:10px;padding:1px 6px;border-radius:3px;background:#334155;color:#94a3b8;white-space:nowrap}
+.source-events-cell .ev-time{font-size:10px;color:#64748b;white-space:nowrap}
+.source-events-cell .no-events{font-size:12px;color:#64748b;font-style:italic;padding:6px 0}
+.source-event-count{font-size:11px;color:#64748b;margin-left:6px}
 </style>
 </head>
 <body>
@@ -64,9 +78,9 @@ header h1 span{color:#38bdf8}
 
   <div class="two-col">
     <div>
-      <div class="section-title">&#128202; Source Health</div>
+      <div class="section-title">&#128202; Source Health <span style="font-size:11px;font-weight:400;color:#64748b">(click to expand events)</span></div>
       <table class="source-table" id="sourceTable">
-        <thead><tr><th>Source</th><th>Status</th><th>Last OK</th><th>Errors</th></tr></thead>
+        <thead><tr><th></th><th>Source</th><th>Status</th><th>Last OK</th><th>Events</th><th>Errors</th></tr></thead>
         <tbody></tbody>
       </table>
     </div>
@@ -80,6 +94,8 @@ header h1 span{color:#38bdf8}
 </div>
 
 <script>
+let eventsBySource = {};
+
 async function refresh() {
   const btn = document.querySelector('.refresh-btn');
   btn.textContent = 'Refreshing...';
@@ -90,6 +106,7 @@ async function refresh() {
       fetch('/safety/health').then(r => r.json()),
       fetch('/safety/changes?since=2000-01-01T00:00:00Z').then(r => r.json()),
     ]);
+    eventsBySource = groupEventsBySource(currentRes);
     renderCities(currentRes);
     renderHealth(healthRes);
     renderEvents(changesRes);
@@ -99,6 +116,20 @@ async function refresh() {
   }
   btn.textContent = '\u21BB Refresh';
   btn.disabled = false;
+}
+
+function groupEventsBySource(data) {
+  const map = {};
+  if (!data || typeof data !== 'object') return map;
+  for (const [cityKey, cityData] of Object.entries(data)) {
+    const events = cityData.events ?? [];
+    for (const ev of events) {
+      const src = ev.source || 'unknown';
+      if (!map[src]) map[src] = [];
+      map[src].push({ ...ev, _city: cityKey });
+    }
+  }
+  return map;
 }
 
 function severityClass(sev) {
@@ -146,18 +177,58 @@ function renderHealth(data) {
   const tbody = document.querySelector('#sourceTable tbody');
   const sources = data.sources ?? [];
   if (sources.length === 0) {
-    tbody.innerHTML = '<tr><td colspan="4" class="no-data">No sources registered yet</td></tr>';
+    tbody.innerHTML = '<tr><td colspan="6" class="no-data">No sources registered yet</td></tr>';
     return;
   }
+
+  const openSources = new Set();
+  tbody.querySelectorAll('.source-row.open').forEach(r => openSources.add(r.dataset.source));
+
   tbody.innerHTML = sources.map(s => {
     const status = s.bootstrapped ? (s.lastError ? 'degraded' : 'ok') : (s.lastError ? 'error' : 'pending');
-    return `<tr>
-      <td class="name">${s.name}</td>
-      <td><span class="status-dot ${status === 'ok' ? 'ok' : status === 'degraded' ? 'warn' : 'err'}"></span>${status}</td>
+    const dotClass = status === 'ok' ? 'ok' : status === 'degraded' ? 'warn' : 'err';
+    const evts = eventsBySource[s.name] || [];
+    const isOpen = openSources.has(s.name);
+    const openClass = isOpen ? ' open' : '';
+
+    let html = `<tr class="source-row${openClass}" data-source="${s.name}" onclick="toggleSource('${s.name}')">
+      <td><span class="toggle-icon">&#9654;</span></td>
+      <td class="name">${s.name}<span class="source-event-count">(${evts.length})</span></td>
+      <td><span class="status-dot ${dotClass}"></span>${status}</td>
       <td style="color:#94a3b8;font-size:12px">${s.lastSuccessAt ? new Date(s.lastSuccessAt).toLocaleTimeString() : '-'}</td>
+      <td style="color:#94a3b8;font-size:12px">${evts.length}</td>
       <td style="color:#94a3b8;font-size:12px;max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${s.lastError ?? '-'}</td>
     </tr>`;
+
+    html += `<tr class="source-events-row${openClass}" data-source-detail="${s.name}">
+      <td colspan="6" class="source-events-cell">${renderSourceEvents(evts)}</td>
+    </tr>`;
+
+    return html;
   }).join('');
+}
+
+function renderSourceEvents(evts) {
+  if (!evts || evts.length === 0) return '<div class="no-events">No events received from this source yet.</div>';
+  return evts.map(e => {
+    const time = e.effectiveTime ? new Date(e.effectiveTime).toLocaleString() : '';
+    const city = (e._city || '').replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+    return `<div class="ev-item">
+      <span class="sev ${severityClass(e.severity)}" style="display:inline-block;padding:0 5px;border-radius:3px;font-size:10px;font-weight:600">${e.severity}</span>
+      <span class="ev-headline" title="${e.headline}">${e.headline}</span>
+      ${city ? `<span class="ev-city">${city}</span>` : ''}
+      <span class="ev-time">${time}</span>
+    </div>`;
+  }).join('');
+}
+
+function toggleSource(name) {
+  const row = document.querySelector(`.source-row[data-source="${name}"]`);
+  const detail = document.querySelector(`.source-events-row[data-source-detail="${name}"]`);
+  if (!row || !detail) return;
+  const wasOpen = row.classList.contains('open');
+  row.classList.toggle('open', !wasOpen);
+  detail.classList.toggle('open', !wasOpen);
 }
 
 function renderEvents(data) {
