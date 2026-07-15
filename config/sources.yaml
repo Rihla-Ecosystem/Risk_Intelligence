@@ -16,7 +16,7 @@ sources:
 
   - name: gdelt_unrest
     enabled: true
-    intervalMinutes: 20
+    intervalMinutes: 60
     auth: none
 
   - name: reliefweb
