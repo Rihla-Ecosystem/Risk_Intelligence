@@ -37,8 +37,20 @@ async function writeStateAtomic(state: CurrentState) {
 }
 
 function isExpired(event: RiskEvent): boolean {
-  if (!event.expiresTime) return false;
-  return new Date(event.expiresTime).getTime() < Date.now();
+  if (event.expiresTime) {
+    return new Date(event.expiresTime).getTime() < Date.now();
+  }
+  const effective = event.effectiveTime ? new Date(event.effectiveTime).getTime() : 0;
+  if (!effective) return true;
+  let ttl = 24 * 60 * 60 * 1000;
+  if (event.source === "openweather_current" || event.source === "openweather_air") {
+    ttl = 2 * 60 * 60 * 1000;
+  } else if (event.category === "health") {
+    ttl = 7 * 24 * 60 * 60 * 1000;
+  } else if (event.category === "unrest" || event.category === "advisory") {
+    ttl = 48 * 60 * 60 * 1000;
+  }
+  return effective + ttl < Date.now();
 }
 
 function computeOverallRisk(events: RiskEvent[]): Severity {
@@ -60,6 +72,20 @@ function isDuplicate(existing: RiskEvent[], candidate: RiskEvent): boolean {
 export async function mergeIntoCurrentState(sourceName: string, newEvents: RiskEvent[]) {
   const state = await readState();
 
+  for (const event of newEvents) {
+    if (!event.expiresTime) {
+      let ttl = 24 * 60 * 60 * 1000;
+      if (event.source === "openweather_current" || event.source === "openweather_air") {
+        ttl = 2 * 60 * 60 * 1000;
+      } else if (event.category === "health") {
+        ttl = 7 * 24 * 60 * 60 * 1000;
+      } else if (event.category === "unrest" || event.category === "advisory") {
+        ttl = 48 * 60 * 60 * 1000;
+      }
+      event.expiresTime = new Date(Date.now() + ttl).toISOString();
+    }
+  }
+
   const byCity = new Map<string, RiskEvent[]>();
   for (const event of newEvents) {
     const key = event.city ?? "unknown";
@@ -67,21 +93,26 @@ export async function mergeIntoCurrentState(sourceName: string, newEvents: RiskE
     byCity.get(key)!.push(event);
   }
 
-  for (const [city, events] of byCity) {
+  const allCities = new Set([...Object.keys(state), ...byCity.keys()]);
+
+  for (const city of allCities) {
     const existing = state[city]?.events ?? [];
     const retained = existing.filter((e) => e.source !== sourceName && !isExpired(e));
-    // add new events, skipping any that already exist (by source + rawRef)
+    const newCityEvents = byCity.get(city) ?? [];
     const merged = [...retained];
-    for (const event of events) {
+
+    for (const event of newCityEvents) {
       if (!isDuplicate(retained, event)) {
         merged.push(event);
       }
     }
 
+    const activeList = merged.filter((e) => !isExpired(e));
+
     state[city] = {
       updatedAt: new Date().toISOString(),
-      events: merged,
-      overallRisk: computeOverallRisk(merged),
+      events: activeList,
+      overallRisk: computeOverallRisk(activeList),
     };
   }
 
@@ -91,9 +122,26 @@ export async function mergeIntoCurrentState(sourceName: string, newEvents: RiskE
 
 export async function getCityState(city: string): Promise<CityState | null> {
   const state = await readState();
-  return state[city] ?? null;
+  const cityState = state[city];
+  if (!cityState) return null;
+  const activeList = cityState.events.filter((e) => !isExpired(e));
+  return {
+    ...cityState,
+    events: activeList,
+    overallRisk: computeOverallRisk(activeList),
+  };
 }
 
 export async function getAllStates(): Promise<CurrentState> {
-  return readState();
+  const state = await readState();
+  const cleaned: CurrentState = {};
+  for (const [city, cityState] of Object.entries(state)) {
+    const activeList = cityState.events.filter((e) => !isExpired(e));
+    cleaned[city] = {
+      ...cityState,
+      events: activeList,
+      overallRisk: computeOverallRisk(activeList),
+    };
+  }
+  return cleaned;
 }
