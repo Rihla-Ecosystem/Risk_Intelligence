@@ -14,7 +14,6 @@ import { emscSeismic } from "./sources/noAuth/emscSeismic.js";
 import { noaaTsunami } from "./sources/noAuth/noaaTsunami.js";
 import { gdeltUnrest } from "./sources/noAuth/gdeltUnrest.js";
 import { reliefweb } from "./sources/noAuth/reliefweb.js";
-import { stateDeptAdvisory } from "./sources/noAuth/stateDeptAdvisory.js";
 import { fcdoAdvisory } from "./sources/noAuth/fcdoAdvisory.js";
 import { whoOutbreak } from "./sources/noAuth/whoOutbreak.js";
 import { cdcTravelHealth } from "./sources/noAuth/cdcTravelHealth.js";
@@ -35,7 +34,6 @@ const ALL_ADAPTERS: SourceAdapter[] = [
   noaaTsunami,
   gdeltUnrest,
   reliefweb,
-  stateDeptAdvisory,
   fcdoAdvisory,
   whoOutbreak,
   cdcTravelHealth,

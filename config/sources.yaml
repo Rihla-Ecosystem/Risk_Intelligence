@@ -24,11 +24,6 @@ sources:
     intervalMinutes: 360
     auth: none
 
-  - name: state_dept_advisory
-    enabled: true
-    intervalMinutes: 720
-    auth: none
-
   - name: fcdo_advisory
     enabled: true
     intervalMinutes: 720
