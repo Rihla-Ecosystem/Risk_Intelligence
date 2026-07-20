@@ -5,6 +5,7 @@ export const gdeltUnrest: SourceAdapter = {
   name: "gdelt_unrest",
   intervalMinutes: 20,
   enabled: true,
+  timeoutMs: 30000,
 
   buildRequest() {
     const params = new URLSearchParams({

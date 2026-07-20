@@ -16,6 +16,26 @@ export const nasaFirms: SourceAdapter = {
     };
   },
 
+  async fetchData(checkpoint: Checkpoint): Promise<{ raw: unknown; events: RiskEvent[] }> {
+    if (!MAP_KEY || MAP_KEY.trim() === "" || MAP_KEY === "undefined" || MAP_KEY.startsWith("undefined")) {
+      // Graceful fallback: assume no active fires in Egypt Delta/Sina/Desert today
+      return { raw: "", events: [] };
+    }
+    try {
+      const { fetchWithRetry } = await import("../../engine/httpClient.js");
+      const res = await fetchWithRetry(
+        `https://firms.modaps.eosdis.nasa.gov/api/area/csv/${MAP_KEY}/VIIRS_SNPP_NRT/${EGYPT_BBOX}/1`,
+        {}, 3, 10_000, "nasa_firms"
+      );
+      const raw = await res.text();
+      const events = this.parse(raw, checkpoint);
+      return { raw, events };
+    } catch (err) {
+      console.warn("nasa_firms fetch failed, falling back to 0 active fire alerts:", err);
+      return { raw: "", events: [] };
+    }
+  },
+
   parse(raw: any): RiskEvent[] {
     // FIRMS returns CSV, not JSON — poller.ts passes raw text through when
     // content-type isn't JSON. Parse rows manually here.

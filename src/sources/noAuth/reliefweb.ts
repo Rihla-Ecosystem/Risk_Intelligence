@@ -10,7 +10,7 @@ export const reliefweb: SourceAdapter = {
     // NOTE: V2 requires a pre-approved appname (register via ReliefWeb API form).
     // Without a registered appname, this endpoint returns 403.
     const params = new URLSearchParams({
-      appname: "rihla-safety",
+      appname: "Rihla-Risk-8h9j24LbwzF32",
       "filter[field]": "country",
       "filter[value]": "Egypt",
     });

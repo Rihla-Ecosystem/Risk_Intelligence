@@ -16,17 +16,12 @@ sources:
 
   - name: gdelt_unrest
     enabled: true
-    intervalMinutes: 20
+    intervalMinutes: 60
     auth: none
 
   - name: reliefweb
     enabled: true
     intervalMinutes: 360
-    auth: none
-
-  - name: state_dept_advisory
-    enabled: true
-    intervalMinutes: 720
     auth: none
 
   - name: fcdo_advisory

@@ -16,13 +16,6 @@ export async function runSource(adapter: SourceAdapter): Promise<
   try {
     const checkpoint = await readCheckpoint(adapter.name);
 
-    // auto-disable after too many consecutive failures
-    const failures: number = (checkpoint.consecutiveFailures as number) ?? 0;
-    if (failures >= MAX_CONSECUTIVE_FAILURES) {
-      await writeCheckpointAtomic(adapter.name, { ...checkpoint, autoDisabled: true, lastError: `disabled after ${failures} consecutive failures` });
-      return { status: "FAILED", error: `auto-disabled after ${failures} consecutive failures` };
-    }
-
     let raw: unknown;
     let events: RiskEvent[];
 

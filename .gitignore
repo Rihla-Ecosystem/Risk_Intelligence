@@ -4,5 +4,7 @@ dist/
 data/checkpoints/*
 !data/checkpoints/.gitkeep
 data/current_state.json
+data/event_log.json
+data/*.xml
 *.log
 .venv

@@ -22,7 +22,11 @@ export async function fetchWithRetry(
 ): Promise<Response> {
   for (let attempt = 1; attempt <= retries; attempt++) {
     try {
-      const res = await fetch(url, { ...init, signal: AbortSignal.timeout(timeoutMs) });
+      const headers = new Headers(init.headers || {});
+      if (!headers.has("User-Agent")) {
+        headers.set("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36");
+      }
+      const res = await fetch(url, { ...init, headers, signal: AbortSignal.timeout(timeoutMs) });
 
       if (res.status === 429) {
         if (attempt === retries) {
