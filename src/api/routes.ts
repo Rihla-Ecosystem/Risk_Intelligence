@@ -29,8 +29,6 @@ export async function registerRoutes(app: FastifyInstance, adapters?: SourceAdap
     return reply.type("text/html").send(html);
   });
 
-  app.addHook("preHandler", authHook);
-
   app.get("/safety/current", async (req, reply) => {
     const { city } = req.query as { city?: string };
 
@@ -68,7 +66,7 @@ export async function registerRoutes(app: FastifyInstance, adapters?: SourceAdap
     };
   });
 
-  app.post("/safety/refresh", async (req, reply) => {
+  app.post("/safety/refresh", { preHandler: authHook }, async (req, reply) => {
     if (!adapters) {
       return reply.code(500).send({ error: "adapters not injected" });
     }
