@@ -15,9 +15,28 @@ const JWT_SECRET = process.env.JWT_ACCESS_SECRET || "";
 const INTERNAL_API_KEY = process.env.INTERNAL_API_KEY || "";
 
 async function authHook(req: FastifyRequest, reply: FastifyReply) {
-   
+  // Option 1: Internal API key (Core-Server gateway)
+  const apiKey = req.headers["x-internal-api-key"] as string | undefined;
+  if (apiKey && INTERNAL_API_KEY && apiKey === INTERNAL_API_KEY) {
+    return;
+  }
 
-  return ;
+  // Option 2: Admin JWT
+  const authHeader = req.headers.authorization as string | undefined;
+  if (authHeader?.startsWith("Bearer ") && JWT_SECRET) {
+    const token = authHeader.slice(7);
+    try {
+      const payload = jwt.verify(token, JWT_SECRET) as { sub: string; role: string };
+      if (payload.role === "admin") {
+        return;
+      }
+      return reply.code(403).send({ error: "Admin privileges required for direct access" });
+    } catch {
+      return reply.code(401).send({ error: "Invalid or expired token" });
+    }
+  }
+
+  return reply.code(401).send({ error: "Authentication required" });
 }
 
 export async function registerRoutes(app: FastifyInstance, adapters?: SourceAdapter[]) {
