@@ -6,6 +6,7 @@ import { getCityState, getAllStates } from "../engine/currentState.js";
 import { getChangesSince } from "../engine/eventLog.js";
 import { getSourcesHealth } from "../engine/health.js";
 import { getStaticCrimeNotes } from "../sources/deferred/numboCrime.stub.js";
+import { nearestCity } from "../engine/models.js";
 import { readFile } from "fs/promises";
 import path from "path";
 import { fileURLToPath } from "url";
@@ -49,18 +50,20 @@ export async function registerRoutes(app: FastifyInstance, adapters?: SourceAdap
   });
 
   app.get("/safety/current", async (req, reply) => {
-    const { city } = req.query as { city?: string };
+    const { city, lat, lon } = req.query as { city?: string; lat?: string; lon?: string };
 
-    if (city) {
-      const state = await getCityState(city);
+    const resolvedCity = city ?? resolveCityFromCoords(lat, lon);
+
+    if (resolvedCity) {
+      const state = await getCityState(resolvedCity);
       const staticNotes = await getStaticCrimeNotes();
-      if (!state && !staticNotes[city]) {
-        return reply.code(404).send({ error: `no data for city: ${city}` });
+      if (!state && !staticNotes[resolvedCity]) {
+        return reply.code(404).send({ error: `no data for city: ${resolvedCity}` });
       }
       return {
-        city,
+        city: resolvedCity,
         ...state,
-        staticNote: staticNotes[city] ?? null,
+        staticNote: staticNotes[resolvedCity] ?? null,
       };
     }
 
@@ -103,4 +106,12 @@ export async function registerRoutes(app: FastifyInstance, adapters?: SourceAdap
     const results = await runAllOnce(adapters);
     return { refreshed: results.length, sources: results };
   });
+}
+
+function resolveCityFromCoords(lat?: string, lon?: string): string | null {
+  if (lat == null || lon == null) return null;
+  const latNum = Number(lat);
+  const lonNum = Number(lon);
+  if (Number.isNaN(latNum) || Number.isNaN(lonNum)) return null;
+  return nearestCity(latNum, lonNum);
 }
